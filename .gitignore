@@ -18,4 +18,5 @@
 !.config/omf
 !.config/vifm
 .config/vifm/vifminfo.json
+.config/vifm/vifminfo.json_*
 
