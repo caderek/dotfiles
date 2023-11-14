@@ -8,9 +8,9 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Add shortcuts to open TUI file manager in the built-in terminal
 vim.keymap.set("n", "<leader>fm", function()
-  Util.terminal({ "vifm", ".", "." }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
-end, { desc = "File manager" })
+  Util.terminal({ "vifm", Util.root(), vim.loop.cwd() }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
+end, { desc = "File manager (root dir + cwd)" })
 
 vim.keymap.set("n", "<leader>fM", function()
-  Util.terminal({ "vifm", "/home/caderek/", "." }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
-end, { desc = "File manager (with home)" })
+  Util.terminal({ "vifm", "/home/caderek/", vim.loop.cwd() }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
+end, { desc = "File manager (home dir + cwd)" })

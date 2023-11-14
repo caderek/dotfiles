@@ -338,6 +338,8 @@ fileviewer {*.docx},
            \vnd.openxmlformats-officedocument.wordprocessingml.document>
          \ docx2txt.pl %f -
 
+fileviewer {*.js,*.mjs,*.jsx,*.ts,*.tsx,*.md,*.html,*.css,*.json,*.lua},<application/msword> chroma %c
+
 " TuDu files
 filetype *.tudu tudu -f %c
 

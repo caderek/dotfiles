@@ -3,6 +3,7 @@ set PATH $PATH /home/caderek/.fnm
 set PATH $PATH /usr/local/go/bin
 set PATH $PATH /home/caderek/Other/zig
 set PATH $PATH /home/caderek/Other/lua/src
+set PATH $PATH /home/caderek/Other
 set EDITOR nvim
 fnm env | source
 fnm use default >/dev/null
