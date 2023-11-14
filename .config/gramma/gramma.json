@@ -1,0 +1,37 @@
+{
+  "api_url": "http://localhost:8081/v2/check",
+  "api_key": "",
+  "dictionary": [
+    "Drehmal",
+    "Gramma",
+    "Multimethods",
+    "correspondingValue",
+    "gramma",
+    "hej",
+    "multimethods",
+    "unchunked",
+    "variadic"
+  ],
+  "language": "en-US",
+  "rules": {
+    "casing": true,
+    "colloquialisms": true,
+    "compounding": true,
+    "confused_words": true,
+    "false_friends": true,
+    "gender_neutrality": true,
+    "grammar": true,
+    "misc": true,
+    "punctuation": true,
+    "redundancy": true,
+    "regionalisms": true,
+    "repetitions": true,
+    "semantics": true,
+    "style": true,
+    "typography": true,
+    "typos": true
+  },
+  "server_path": "/home/caderek/.languagetool/LanguageTool-5.5",
+  "server_pid": 45525,
+  "server_once": "false"
+}
