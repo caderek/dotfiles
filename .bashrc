@@ -122,3 +122,4 @@ eval "`fnm env`"
 export EDITOR=nvim
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. "$HOME/.cargo/env"
