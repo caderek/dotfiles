@@ -19,4 +19,7 @@
 !.config/vifm
 .config/vifm/vifminfo.json
 .config/vifm/vifminfo.json_*
+!.config/cmus
+.config/cmus/*
+!.config/cmus/*.theme
 
