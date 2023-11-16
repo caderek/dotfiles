@@ -14,3 +14,8 @@ end, { desc = "File manager (root dir + cwd)" })
 vim.keymap.set("n", "<leader>fM", function()
   Util.terminal({ "vifm", "/home/caderek/", vim.loop.cwd() }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
 end, { desc = "File manager (home dir + cwd)" })
+
+-- Add shortcuts to open TUI music player in the built-in terminal
+vim.keymap.set("n", "<leader>m", function()
+  Util.terminal({ "cmus" }, { cwd = Util.root(), esc_esc = true, ctrl_hjkl = false })
+end, { desc = "Music player" })
