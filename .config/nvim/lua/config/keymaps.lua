@@ -38,7 +38,7 @@ wk.register({
 
 vim.keymap.set("n", "<leader>ha", harpoonMark.add_file, { desc = "Add" })
 vim.keymap.set("n", "<leader>hl", harpoonUI.toggle_quick_menu, { desc = "Quick menu" })
-vim.keymap.set("n", "9", harpoonUI.toggle_quick_menu, { desc = "Quick menu" })
+vim.keymap.set("n", "gl", harpoonUI.toggle_quick_menu, { desc = "Quick menu" })
 vim.keymap.set("n", "<leader>h[", harpoonUI.nav_prev, { desc = "Prev" })
 vim.keymap.set("n", "<leader>h]", harpoonUI.nav_next, { desc = "Next" })
 
@@ -47,7 +47,7 @@ for i = 1, 8 do
     harpoonUI.nav_file(i)
   end, { desc = "Jump to file " .. tostring(i) })
 
-  vim.keymap.set("n", tostring(i), function()
+  vim.keymap.set("n", "g" .. tostring(i), function()
     harpoonUI.nav_file(i)
   end, { desc = "Jump to file " .. tostring(i) })
 end
