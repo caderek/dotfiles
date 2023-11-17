@@ -15,7 +15,10 @@ vim.keymap.set("n", "<leader>fm", function()
 end, { desc = "File manager (root dir + cwd)" })
 
 vim.keymap.set("n", "<leader>fM", function()
-  Util.terminal({ "vifm", "/home/caderek/", vim.loop.cwd() }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
+  Util.terminal(
+    { "vifm", os.getenv("HOME"), vim.loop.cwd() },
+    { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false }
+  )
 end, { desc = "File manager (home dir + cwd)" })
 
 -- Add shortcuts to open TUI music player in the built-in terminal
@@ -25,7 +28,7 @@ end, { desc = "Music player" })
 
 -- Add shortcuts to open TUI typing test in the built-in terminal
 vim.keymap.set("n", "<leader>t", function()
-  Util.terminal({ "/home/caderek/.cargo/bin/toipe" }, { cwd = Util.root(), esc_esc = true, ctrl_hjkl = false })
+  Util.terminal({ os.getenv("HOME") .. "/.cargo/bin/toipe" }, { cwd = Util.root(), esc_esc = true, ctrl_hjkl = false })
 end, { desc = "Typing test" })
 
 -- Add Harpoon shourtcuts
