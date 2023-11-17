@@ -45,4 +45,8 @@ for i = 1, 8 do
   vim.keymap.set("n", "<leader>h" .. tostring(i), function()
     harpoonUI.nav_file(i)
   end, { desc = "Jump to file " .. tostring(i) })
+
+  vim.keymap.set("n", tostring(i), function()
+    harpoonUI.nav_file(i)
+  end, { desc = "Jump to file " .. tostring(i) })
 end
