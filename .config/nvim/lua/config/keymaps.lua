@@ -38,7 +38,6 @@ wk.register({
 
 vim.keymap.set("n", "<leader>ha", harpoonMark.add_file, { desc = "Add" })
 vim.keymap.set("n", "<leader>hl", harpoonUI.toggle_quick_menu, { desc = "Quick menu" })
-vim.keymap.set("n", "gl", harpoonUI.toggle_quick_menu, { desc = "Quick menu" })
 vim.keymap.set("n", "<leader>h[", harpoonUI.nav_prev, { desc = "Prev" })
 vim.keymap.set("n", "<leader>h]", harpoonUI.nav_next, { desc = "Next" })
 

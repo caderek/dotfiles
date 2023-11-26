@@ -6,6 +6,7 @@ set PATH $PATH /home/caderek/Other/lua/src
 set PATH $PATH /home/caderek/Other
 set PATH $PATH /home/caderek/.cargo/bin
 set EDITOR nvim
+set MICRO_TRUECOLOR 1
 fnm env | source
 fnm use default >/dev/null
 set fish_greeting
@@ -18,8 +19,9 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # lapce
 set PATH $PATH /home/caderek/Other/Lapce
 
-# Remap keys to have Esc intead os CapsLock and Shilt instead of key 94
-setxkbmap -option
-setxkbmap -option caps:escape
-xmodmap -e "keycode 94 = Shift_L NoSymbol Shift_L"
-xmodmap -e "keycode 91 = period period period"
+# Remap keys
+setxkbmap -option # Defaults
+setxkbmap -option ctrl:nocaps # CapsLook as Ctrl
+xcape -e 'Control_L=Escape' # When tapped Capslock (ctrl) is Escape
+xmodmap -e "keycode 94 = Shift_L NoSymbol Shift_L" # Shift instead of addiional symbols
+xmodmap -e "keycode 91 = period period period" # Dot instead of comma for numbers
