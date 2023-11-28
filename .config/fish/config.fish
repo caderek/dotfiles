@@ -14,6 +14,7 @@ set fish_greeting
 # aliases
 alias disk-usage ncdu
 alias c clear
+alias ta="tmux attach"
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
