@@ -10,7 +10,10 @@ set MICRO_TRUECOLOR 1
 fnm env | source
 fnm use default >/dev/null
 set fish_greeting
+
+# aliases
 alias disk-usage ncdu
+alias c clear
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
@@ -22,6 +25,6 @@ set PATH $PATH /home/caderek/Other/Lapce
 # Remap keys
 setxkbmap -option # Defaults
 setxkbmap -option ctrl:nocaps # CapsLook as Ctrl
-xcape -e 'Control_L=Escape' # When tapped Capslock (ctrl) is Escape
+setxkbmap -option shift:both_capslock
 xmodmap -e "keycode 94 = Shift_L NoSymbol Shift_L" # Shift instead of addiional symbols
 xmodmap -e "keycode 91 = period period period" # Dot instead of comma for numbers

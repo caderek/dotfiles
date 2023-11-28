@@ -9,6 +9,9 @@ local harpoonUI = require("harpoon.ui")
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-m>", "<cmd>DevdocsOpenFloat<cr>")
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+--Remap Tab as Esc
+--vim.keymap.set({ "i", "x", "n", "s" }, "kj", "<Esc>")
+
 -- Add shortcuts to open TUI file manager in the built-in terminal
 vim.keymap.set("n", "<leader>fm", function()
   Util.terminal({ "vifm", Util.root(), vim.loop.cwd() }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
