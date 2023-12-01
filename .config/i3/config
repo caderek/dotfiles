@@ -41,11 +41,12 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
+# start apps
 bindsym $mod+Return exec kitty
+bindsym $mod+b exec google-chrome
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start launcher
 bindsym $mod+d exec --no-startup-id "bash $HOME/.config/rofi/launchers/type-1/launcher.sh"
@@ -60,8 +61,6 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
@@ -210,3 +209,8 @@ exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/cattpuccin4
 # launch compositor
 exec_always --no-startup-id picom
 
+# rearange monitors
+exec --no-startup-id xrandr --output VGA-1 --left-of LVDS-1
+
+# enable theme for applications
+exec --no-startup-id /usr/libexec/gsd-xsettings
