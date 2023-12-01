@@ -25,3 +25,5 @@
 !.config/i3
 !.config/rofi
 !.config/dunst
+!.config/btop
+.config/btop/*.log
