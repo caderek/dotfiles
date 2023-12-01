@@ -204,13 +204,15 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # launch wallpaper
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/cattpuccin4.png
+
 # launch compositor
 exec_always --no-startup-id picom
 
 # rearange monitors
-exec --no-startup-id xrandr --output VGA-1 --left-of LVDS-1
+exec_always --no-startup-id xrandr --output VGA-1 --left-of LVDS-1
 
 # enable theme for applications
-exec --no-startup-id /usr/libexec/gsd-xsettings
+exec_always --no-startup-id /usr/libexec/gsd-xsettings
