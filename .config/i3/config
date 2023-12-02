@@ -175,8 +175,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # tweak borders
-for_window [class="*"] border none
-for_window [class="Google-chrome" title="Google Chrome"] border none
+for_window [class="^.*"] border none
 
 # set gap sizes
 gaps inner 6
@@ -216,3 +215,6 @@ exec_always --no-startup-id xrandr --output VGA-1 --left-of LVDS-1
 
 # enable theme for applications
 exec_always --no-startup-id /usr/libexec/gsd-xsettings
+
+# always floating (get class via `xprop` command)
+for_window [class="Nm-connection-editor"] floating enable
