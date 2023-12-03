@@ -16,12 +16,8 @@ alias disk-usage ncdu
 alias c clear
 alias ta="tmux attach"
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
-# lapce
-set PATH $PATH /home/caderek/Other/Lapce
+# keybindings
+bind \cf 'clear; commandline -f repaint'
 
 # Remap keys
 setxkbmap -option # Defaults
