@@ -43,7 +43,9 @@ tiling_drag modifier titlebar
 
 # start apps
 bindsym $mod+Return exec kitty
+bindsym $mod+t exec kitty
 bindsym $mod+b exec google-chrome
+bindsym $mod+n exec nautilus
 
 # kill focused window
 bindsym $mod+q kill
