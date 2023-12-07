@@ -2,10 +2,11 @@
 set PATH $PATH $HOME/.fnm
 set PATH $PATH /usr/local/go/bin
 set PATH $PATH $HOME/Other/zig
-set PATH $PATH $HME/Other/lua/src
+set PATH $PATH $HOME/Other/lua/src
 set PATH $PATH $HOME/Other
 set PATH $PATH $HOME/.cargo/bin
 set PATH $PATH $HOME/.tmux/plugins/tmuxifier/bin
+set PATH $PATH $HOME/Other/nvim-linux64/bin/
 set EDITOR nvim
 set MICRO_TRUECOLOR 1
 fnm env | source
