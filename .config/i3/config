@@ -1,6 +1,7 @@
 # Switch xorg to Nvidia
 exec xrandr --setprovideroutputsource modesetting NVIDIA-0
 exec xrandr --auto
+exec xrandr --dpi 96
 
 # rearange monitors
 exec_always --no-startup-id xrandr --output VGA-1-1 --left-of LVDS-1-1
