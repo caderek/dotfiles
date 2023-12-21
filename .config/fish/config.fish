@@ -17,6 +17,7 @@ set fish_greeting
 alias disk-usage ncdu
 alias c clear
 alias ta="tmux attach"
+alias vim="nvim --clean"
 
 # keybindings
 bind \cf 'clear; commandline -f repaint'
@@ -27,3 +28,6 @@ setxkbmap -option ctrl:nocaps # CapsLook as Ctrl
 setxkbmap -option shift:both_capslock
 xmodmap -e "keycode 94 = Shift_L NoSymbol Shift_L" # Shift instead of addiional symbols
 xmodmap -e "keycode 91 = period period period" # Dot instead of comma for numbers
+
+# opam configuration
+source /home/caderek/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
