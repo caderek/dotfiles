@@ -1,6 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    -- diagnostics = {
+    --   virtual_text = false,
+    -- },
     ---@type lspconfig.options
     servers = {
       lua_ls = {
@@ -11,7 +14,7 @@ return {
         -- keys = {},
         settings = {
           Lua = {
-            diagnostics = { globals = { "vim", "love" } },
+            diagnostics = { globals = { "vim", "love", "busted" } },
           },
         },
       },
