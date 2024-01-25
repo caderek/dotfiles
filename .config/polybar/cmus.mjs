@@ -16,7 +16,12 @@ try {
 
   tags.status = status.replace("status ", "");
 
-  if (tags.title || tags.artist) {
-    console.log(`  ${tags.title ?? "Unknown"} - ${tags.artist ?? "unknown"}`);
+  if (tags.status === "stopped") {
+    console.log("  Not playing");
+  } else if (tags.title || tags.artist) {
+    const icon = tags.status === "paused" ? " " : " ";
+    console.log(
+      `${icon} ${tags.title ?? "Unknown"} - ${tags.artist ?? "unknown"}`,
+    );
   }
 } catch {}
