@@ -30,7 +30,17 @@ if handle then
 	end
 
 	local iconPlayPause = tags.status == "playing" and " " or " "
-	local iconRepeat = tags["repeat"] == "true" and "󰑖 " or "󰑗 "
+
+	local iconRepeat = ""
+
+	if tags.repeat_current == "true" then
+		iconRepeat = "󰑘 "
+	elseif tags["repeat"] == "true" then
+		iconRepeat = "󰑖 "
+	else
+		iconRepeat = "󰑗 "
+	end
+
 	local iconShuffle = tags.shuffle == "true" and "󰒟 " or "󰒞 "
 	local vol = tonumber(tags.vol_left)
 
@@ -52,7 +62,11 @@ if handle then
 		.. "%{A1:cmus-remote -v +10%:} %{A} "
 
 	if tags.artist or tags.title then
-		ui = ui .. "| " .. (tags.title or "Unknown") .. " - " .. (tags.artist or "unknown")
+		local info = (tags.title or "Unknown") .. " - " .. (tags.artist or "unknown")
+		local command = "echo " .. info .. " | xclip -sel clip"
+
+		-- if you click the song description it will be copied to the clipboard
+		ui = ui .. "| %{A1:" .. command .. ":}" .. info .. " %{A}"
 	end
 
 	print(ui)
