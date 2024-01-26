@@ -21,7 +21,7 @@ if handle then
 	for _, line in ipairs(lines) do
 		if line:match("^status") then
 			tags.status = split(line, "[^ ]+")[2]
-		elseif line:match("^tag") then
+		elseif line:match("^tag") or line:match("^set") then
 			local chunks = split(line, "[^ ]+")
 			local key = chunks[2]
 			local val = table.concat(chunks, " ", 3)
@@ -29,16 +29,26 @@ if handle then
 		end
 	end
 
-	local icon = tags.status == "playing" and " " or " "
+	local iconPlayPause = tags.status == "playing" and " " or " "
+	local iconRepeat = tags["repeat"] == "true" and "󰑖 " or "󰑗 "
+	local iconShuffle = tags.shuffle == "true" and "󰒟 " or "󰒞 "
+	local vol = tonumber(tags.vol_left)
 
-	local ui = "%{A1:cmus-remote -u:} "
-		.. icon
+	local ui = "%{A1:cmus-remote -u:}"
+		.. iconPlayPause
 		.. "%{A} "
 		.. "%{A1:cmus-remote -r:} %{A} "
 		.. "%{A1:cmus-remote -n:} %{A} "
-		.. "%{A1:cmus-remote -R:}󰑖 %{A} "
-		.. "%{A1:cmus-remote -S:}󰒟 %{A} "
-		.. "%{A1:cmus-remote -v -10%:} %{A} "
+		.. "%{A1:cmus-remote -R:}"
+		.. iconRepeat
+		.. "%{A} "
+		.. "%{A1:cmus-remote -S:}"
+		.. iconShuffle
+		.. "%{A} "
+		.. "| "
+		.. "%{A1:cmus-remote -v -10%:} %{A}"
+		.. vol
+		.. "% "
 		.. "%{A1:cmus-remote -v +10%:} %{A} "
 
 	if tags.artist or tags.title then
