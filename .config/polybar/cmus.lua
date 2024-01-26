@@ -29,10 +29,21 @@ if handle then
 		end
 	end
 
-	if tags.status == "stopped" then
-		print(" Not playing")
-	elseif tags.title or tags.artist then
-		local icon = tags.status == "paused" and " " or " "
-		print(icon .. " " .. (tags.title or "Unknown") .. " - " .. (tags.artist or "unknown"))
+	local icon = tags.status == "playing" and " " or " "
+
+	local ui = "%{A1:cmus-remote -u:} "
+		.. icon
+		.. "%{A} "
+		.. "%{A1:cmus-remote -r:} %{A} "
+		.. "%{A1:cmus-remote -n:} %{A} "
+		.. "%{A1:cmus-remote -R:}󰑖 %{A} "
+		.. "%{A1:cmus-remote -S:}󰒟 %{A} "
+		.. "%{A1:cmus-remote -v -10%:} %{A} "
+		.. "%{A1:cmus-remote -v +10%:}  %{A} "
+
+	if tags.artist or tags.title then
+		ui = ui .. (tags.title or "Unknown") .. " - " .. (tags.artist or "unknown")
 	end
+
+	print(ui)
 end
