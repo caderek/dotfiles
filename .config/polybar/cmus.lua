@@ -32,13 +32,20 @@ if handle then
 	local iconPlayPause = tags.status == "playing" and " " or " "
 
 	local iconRepeat = ""
+	local commandRepeat = ""
 
 	if tags.repeat_current == "true" then
 		iconRepeat = "󰑘 "
+		commandRepeat = "bash ~/.config/polybar/cmus-repeat.sh"
+		if tags["repeat"] == "true" then
+			commandRepeat = commandRepeat .. "&& cmus-remote -R"
+		end
 	elseif tags["repeat"] == "true" then
 		iconRepeat = "󰑖 "
+		commandRepeat = "bash ~/.config/polybar/cmus-repeat.sh"
 	else
 		iconRepeat = "󰑗 "
+		commandRepeat = "cmus-remote -R"
 	end
 
 	local iconShuffle = tags.shuffle == "true" and "󰒟 " or "󰒞 "
@@ -49,7 +56,9 @@ if handle then
 		.. "%{A} "
 		.. "%{A1:cmus-remote -r:} %{A} "
 		.. "%{A1:cmus-remote -n:} %{A} "
-		.. "%{A1:cmus-remote -R:}"
+		.. "%{A1:"
+		.. commandRepeat
+		.. ":}"
 		.. iconRepeat
 		.. "%{A} "
 		.. "%{A1:cmus-remote -S:}"
@@ -62,11 +71,13 @@ if handle then
 		.. "%{A1:cmus-remote -v +10%:} %{A} "
 
 	if tags.artist or tags.title then
+		local MAX_LEN = 50
 		local info = (tags.title or "Unknown") .. " - " .. (tags.artist or "unknown")
 		local command = "echo " .. info .. " | xclip -sel clip"
+		local trimmed = #info > MAX_LEN and (info:sub(1, MAX_LEN - 3) .. "...") or info
 
 		-- if you click the song description it will be copied to the clipboard
-		ui = ui .. "| %{A1:" .. command .. ":}" .. info .. " %{A}"
+		ui = ui .. "| %{A1:" .. command .. ":}" .. trimmed .. " %{A}"
 	end
 
 	print(ui)
