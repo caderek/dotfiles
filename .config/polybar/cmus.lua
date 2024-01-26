@@ -39,10 +39,10 @@ if handle then
 		.. "%{A1:cmus-remote -R:}󰑖 %{A} "
 		.. "%{A1:cmus-remote -S:}󰒟 %{A} "
 		.. "%{A1:cmus-remote -v -10%:} %{A} "
-		.. "%{A1:cmus-remote -v +10%:}  %{A} "
+		.. "%{A1:cmus-remote -v +10%:} %{A} "
 
 	if tags.artist or tags.title then
-		ui = ui .. (tags.title or "Unknown") .. " - " .. (tags.artist or "unknown")
+		ui = ui .. "| " .. (tags.title or "Unknown") .. " - " .. (tags.artist or "unknown")
 	end
 
 	print(ui)
