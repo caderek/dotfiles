@@ -29,9 +29,14 @@ if handle then
 		end
 	end
 
-	local iconPlayPause = tags.status == "playing" and " " or " "
+	local vol = tonumber(tags.vol_left)
 
+	local volPretty = vol == 0 and "MIN" or (vol == 100 and "MAX" or (tostring(vol) .. "%"))
+
+	local iconPlayPause = tags.status == "playing" and " " or " "
+	local iconShuffle = tags.shuffle == "true" and "󰒟 " or "%{F#6c7086}󰒟 %{F#cba6f7}"
 	local iconRepeat = ""
+
 	local commandRepeat = ""
 
 	if tags.repeat_current == "true" then
@@ -48,9 +53,6 @@ if handle then
 		commandRepeat = "cmus-remote -R"
 	end
 
-	local iconShuffle = tags.shuffle == "true" and "󰒟 " or "%{F#6c7086}󰒟 %{F#cba6f7}"
-	local vol = tonumber(tags.vol_left)
-
 	local ui = "%{A1:cmus-remote -u:}"
 		.. iconPlayPause
 		.. "%{A} "
@@ -66,9 +68,8 @@ if handle then
 		.. "%{A} "
 		.. "%{F#585b70}| %{F#cba6f7}"
 		.. "%{A1:cmus-remote -v -10%:} %{A}%{F#cdd6f4}"
-		.. vol
-		.. "% "
-		.. "%{F#cba6f7}%{A1:cmus-remote -v +10%:} %{A} "
+		.. volPretty
+		.. " %{F#cba6f7}%{A1:cmus-remote -v +10%:} %{A} "
 
 	if tags.artist or tags.title then
 		local MAX_LEN = 50
@@ -77,7 +78,7 @@ if handle then
 		local trimmed = #info > MAX_LEN and (info:sub(1, MAX_LEN - 3) .. "...") or info
 
 		-- if you click the song description it will be copied to the clipboard
-		ui = ui .. "%{F#585b70}| %{F#cba6f7}%{A1:" .. command .. ":}" .. trimmed .. " %{A}"
+		ui = ui .. "%{F#585b70}| %{F#cba6f7}%{A1:" .. command .. ":}%{T2}" .. trimmed .. "%{T-}%{A}"
 	end
 
 	print(ui)
