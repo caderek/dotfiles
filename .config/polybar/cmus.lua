@@ -53,23 +53,25 @@ if handle then
 		commandRepeat = "cmus-remote -R"
 	end
 
-	local ui = "%{A1:cmus-remote -u:}"
-		.. iconPlayPause
-		.. "%{A} "
-		.. "%{A1:cmus-remote -r:} %{A} "
-		.. "%{A1:cmus-remote -n:} %{A} "
-		.. "%{A1:"
-		.. commandRepeat
-		.. ":}"
-		.. iconRepeat
-		.. "%{A} "
-		.. "%{A1:cmus-remote -S:}"
-		.. iconShuffle
-		.. "%{A} "
-		.. "%{F#585b70}| %{F#cba6f7}"
-		.. "%{A1:cmus-remote -v -10%:} %{A}%{F#cdd6f4}"
-		.. volPretty
-		.. " %{F#cba6f7}%{A1:cmus-remote -v +10%:} %{A} "
+	local ui = "%{A1:cmus-remote -u:}" .. iconPlayPause .. "%{A} "
+
+	if tags.status ~= "stopped" then
+		ui = ui
+			.. "%{A1:cmus-remote -r:} %{A} "
+			.. "%{A1:cmus-remote -n:} %{A} "
+			.. "%{A1:"
+			.. commandRepeat
+			.. ":}"
+			.. iconRepeat
+			.. "%{A} "
+			.. "%{A1:cmus-remote -S:}"
+			.. iconShuffle
+			.. "%{A} "
+			.. "%{F#585b70}| %{F#cba6f7}"
+			.. "%{A1:cmus-remote -v -10%:} %{A}%{F#cdd6f4}"
+			.. volPretty
+			.. " %{F#cba6f7}%{A1:cmus-remote -v +10%:} %{A} "
+	end
 
 	if tags.artist or tags.title then
 		local MAX_LEN = 50
@@ -79,6 +81,8 @@ if handle then
 
 		-- if you click the song description it will be copied to the clipboard
 		ui = ui .. "%{F#585b70}| %{F#cba6f7}%{A1:" .. command .. ":}%{T2}" .. trimmed .. "%{T-}%{A}"
+	else
+		ui = ui .. "%{T2}Not playing%{T-}"
 	end
 
 	print(ui)
