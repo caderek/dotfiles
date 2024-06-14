@@ -8,7 +8,9 @@ set PATH $PATH $HOME/.cargo/bin
 set PATH $PATH $HOME/.tmux/plugins/tmuxifier/bin
 set PATH $PATH $HOME/Other/nvim-linux64/bin/
 set PATH $PATH $HOME/.luarocks/bin/
+set VISUAL nvim
 set EDITOR nvim
+set SUDO_EDITOR /home/caderek/Other/nvim-linux64/bin//nvim
 set MICRO_TRUECOLOR 1
 fnm env | source
 fnm use default >/dev/null

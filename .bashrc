@@ -118,7 +118,9 @@ fi
 # fnm
 export PATH=/home/caderek/.fnm:$PATH
 eval "$(fnm env)"
+export VISUAL=nvim
 export EDITOR=nvim
+export SUDO_EDITOR=nvim
 export MICRO_TRUECOLOR=1
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
