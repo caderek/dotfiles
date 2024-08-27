@@ -203,7 +203,7 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # launch wallpaper
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/cattpuccin1.png
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/catppuccin-wallpapers/misc/cat_pacman.png
 
 # launch compositor
 exec_always --no-startup-id picom

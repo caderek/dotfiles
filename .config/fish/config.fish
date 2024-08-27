@@ -1,13 +1,13 @@
 # fnm
-set PATH $PATH $HOME/.fnm
+set PATH $PATH $HOME/.local/share/fnm/
 set PATH $PATH /usr/local/go/bin
-set PATH $PATH $HOME/Other/zig
-set PATH $PATH $HOME/Other/lua/src
+#set PATH $PATH $HOME/Other/zig
+#set PATH $PATH $HOME/Other/lua/src
 set PATH $PATH $HOME/Other
-set PATH $PATH $HOME/.cargo/bin
-set PATH $PATH $HOME/.tmux/plugins/tmuxifier/bin
+#set PATH $PATH $HOME/.cargo/bin
+#set PATH $PATH $HOME/.tmux/plugins/tmuxifier/bin
 set PATH $PATH $HOME/Other/nvim-linux64/bin/
-set PATH $PATH $HOME/.luarocks/bin/
+#set PATH $PATH $HOME/.luarocks/bin/
 set VISUAL nvim
 set EDITOR nvim
 set SUDO_EDITOR /home/caderek/Other/nvim-linux64/bin//nvim

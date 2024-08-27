@@ -1,1 +1,0 @@
-/home/caderek/.fzf/shell/key-bindings.fish
