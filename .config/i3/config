@@ -2,8 +2,8 @@
 exec_always $HOME/.config/i3/set_desktop.sh
 
 # Set initial workspaces
-workspace 1 output LVDS-1-1
-workspace 10 output VGA-1-1
+workspace 1 output LVDS-1
+workspace 10 output VGA-1
 
 set $mod Mod4
 
