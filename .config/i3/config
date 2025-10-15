@@ -30,6 +30,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -190,8 +192,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=0 -q set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 10%+
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -202,11 +204,14 @@ bindsym XF86AudioPrev exec playerctl previous
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+exec_always --no-startup-id flatpak run com.github.wwmm.easyeffects --gapplication-service
+
 # launch wallpaper
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/catppuccin-wallpapers/misc/cat_pacman.png
 
 # launch compositor
 exec_always --no-startup-id picom
+# exec_always --no-startup-id picom --config $HOME/.config/picom.conf
 
 
 # enable theme for applications

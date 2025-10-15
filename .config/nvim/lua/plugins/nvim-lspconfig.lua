@@ -18,6 +18,9 @@ return {
           },
         },
       },
+      glsl_analyzer = {
+        filetypes = { "glsl", "vert", "frag" },
+      },
     },
   },
 }
