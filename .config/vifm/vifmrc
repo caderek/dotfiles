@@ -33,6 +33,10 @@ set trash
 
 set history=100
 
+" This toggles hidden files/dirs (comment out to disable)
+
+set dotfiles
+
 " Automatically resolve symbolic links on l or Enter.
 
 set nofollowlinks
