@@ -25,11 +25,8 @@ return {
       },
       formatters = {
         indent = {
-          -- This tells conform to look for the "indent" command on your system
           command = "indent",
-          -- Optional: Add flags to make it behave more like C for your bc files
-          -- "-linux" is a popular preset that handles braces well
-          args = { "-br", "-ce", "-cdw", "-nbc" },
+          args = { "-linux" },
           stdin = true,
         },
       },

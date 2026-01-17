@@ -207,7 +207,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id flatpak run com.github.wwmm.easyeffects --gapplication-service
 
 # launch wallpaper
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/catppuccin-wallpapers/misc/cat_pacman.png
+# exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/catppuccin-wallpapers/misc/cat_pacman.png
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/singularity.png
 
 # launch compositor
 exec_always --no-startup-id picom

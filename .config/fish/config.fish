@@ -21,19 +21,23 @@ fnm env | source
 fnm use default >/dev/null
 set fish_greeting
 
+set BROWSER google-chrome
+
 # aliases
 alias disk-usage ncdu
 alias c clear
 alias ta="tmux attach"
 alias vim="nvim --clean"
 alias bc="bc -ql $HOME/.config/bc/dist/*.bc"
+alias entertrained="$BROWSER https://entertrained.app"
+alias y="yeetpad"
 
 # keybindings
 bind \cf 'clear; commandline -f repaint'
 
 # Remap keys
 setxkbmap -option
-setxkbmap -option ctrl:nocaps
+# setxkbmap -option ctrl:nocaps
 setxkbmap -option shift:both_capslock
 xmodmap -e "keycode 94 = Shift_L NoSymbol Shift_L"
 xmodmap -e "keycode 91 = period period period"
